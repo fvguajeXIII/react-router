@@ -11,25 +11,135 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  background: linear-gradient(180deg, #f3f3f3 0%, #fff 100%);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+h1 {
+  color: #232f3e;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #232f3e;
+  line-height: 1.6;
+}
+
+.card {
+  padding: 2em;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  h1 {
+    font-size: 1.5rem;
+  }
+  .prodotti > div {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: 1rem !important;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  #root {
+    padding: 0;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.7rem 0.3rem;
+  }
+  h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .prodotti > div {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+  img {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .prodotti > div {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.7rem 0.3rem;
+  }
+  h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .prodotti > div {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+  img {
+    max-width: 100%;
+    height: auto !important;
   }
 }
 

@@ -32,18 +32,20 @@ const DettaglioProdotto = () => {
   return (
     <div style={{
       background: "#fff",
-      borderRadius: "12px",
-      boxShadow: "0 2px 12px rgba(0,0,0,0.10)",
+      borderRadius: "14px",
+      boxShadow: "0 6px 32px rgba(0,0,0,0.13)",
       padding: "2.5rem 2rem",
-      maxWidth: "700px",
-      margin: "0 auto 2rem auto",
-      textAlign: "center"
+      maxWidth: "600px",
+      marginLeft: "auto",
+      marginRight: "auto",
+      textAlign: "center",
+      marginBottom: "2.5rem"
     }}>
-      <h1 style={{ color: "#232f3e", fontWeight: 700, fontSize: "2rem" }}>{prodotto.title}</h1>
-      <img src={prodotto.image} alt={prodotto.title} style={{ width: "180px", height: "180px", objectFit: "contain", marginBottom: "1.5rem" }} />
-      <p style={{ fontSize: "1.15rem", color: "#111", marginBottom: "1rem" }}>{prodotto.description}</p>
-      <p style={{ fontWeight: "bold", color: "#b12704", fontSize: "1.3rem" }}>{prodotto.price} €</p>
-      <p style={{ color: "#232f3e", fontSize: "1rem", marginTop: "1rem" }}>Categoria: {prodotto.category}</p>
+  <h1 style={{ color: "#232f3e", fontWeight: 700, fontSize: "2rem", marginBottom: "1.2rem" }}>{prodotto.title}</h1>
+  <img src={prodotto.image} alt={prodotto.title} style={{ width: "160px", height: "160px", objectFit: "contain", marginBottom: "1.5rem" }} />
+  <p style={{ fontSize: "1.15rem", color: "#232f3e", marginBottom: "1rem" }}>{prodotto.description}</p>
+  <p style={{ fontWeight: "bold", color: "#b12704", fontSize: "1.3rem", marginBottom: "0.5rem" }}>{prodotto.price} €</p>
+  <span style={{ color: "#888", fontSize: "1rem" }}>Categoria: {prodotto.category}</span>
 
       <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", marginTop: "2rem" }}>
         <button
@@ -53,9 +55,11 @@ const DettaglioProdotto = () => {
             background: prevId ? "#febd69" : "#eee",
             color: prevId ? "#232f3e" : "#aaa",
             border: "none",
-            borderRadius: "4px",
-            padding: "0.7rem 1.5rem",
+            borderRadius: "6px",
+            padding: "0.9rem 2rem",
             fontWeight: "bold",
+            fontSize: "1rem",
+            boxShadow: prevId ? "0 2px 8px rgba(254,189,105,0.18)" : "none",
             cursor: prevId ? "pointer" : "not-allowed"
           }}
         >
@@ -68,9 +72,11 @@ const DettaglioProdotto = () => {
             background: nextId ? "#febd69" : "#eee",
             color: nextId ? "#232f3e" : "#aaa",
             border: "none",
-            borderRadius: "4px",
-            padding: "0.7rem 1.5rem",
+            borderRadius: "6px",
+            padding: "0.9rem 2rem",
             fontWeight: "bold",
+            fontSize: "1rem",
+            boxShadow: nextId ? "0 2px 8px rgba(254,189,105,0.18)" : "none",
             cursor: nextId ? "pointer" : "not-allowed"
           }}
         >
