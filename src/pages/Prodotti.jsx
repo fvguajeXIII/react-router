@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Prodotti = () => {
   const [prodotti, setProdotti] = useState([]);
@@ -31,20 +32,29 @@ const Prodotti = () => {
         marginTop: "2rem"
       }}>
         {prodotti.map((prodotto) => (
-          <div key={prodotto.id} style={{
-            background: "#fff",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            padding: "1.5rem",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            minHeight: "340px"
-          }}>
-            <img src={prodotto.image} alt={prodotto.title} style={{ width: "120px", height: "120px", objectFit: "contain", marginBottom: "1rem" }} />
-            <h3 style={{ fontSize: "1.1rem", color: "#232f3e", marginBottom: "0.7rem", textAlign: "center" }}>{prodotto.title}</h3>
-            <p style={{ fontWeight: "bold", color: "#b12704", fontSize: "1.2rem", marginTop: "auto" }}>{prodotto.price} €</p>
-          </div>
+          <Link
+            to={`/prodotti/${prodotto.id}`}
+            key={prodotto.id}
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            <div style={{
+              background: "#fff",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+              padding: "1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              minHeight: "340px",
+              transition: "box-shadow 0.2s, transform 0.2s",
+            }}>
+              <img src={prodotto.image} alt={prodotto.title} style={{ width: "120px", height: "120px", objectFit: "contain", marginBottom: "1rem" }} />
+              <h3 style={{ fontSize: "1.1rem", color: "#232f3e", marginBottom: "0.7rem", textAlign: "center" }}>{prodotto.title}</h3>
+              <p style={{ fontWeight: "bold", color: "#b12704", fontSize: "1.2rem", marginTop: "auto" }}>{prodotto.price} €</p>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
